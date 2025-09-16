@@ -1,0 +1,35 @@
+{
+  "serial_number": "PDG-202405-0001",
+  "issue_date": "2024-05-30",
+  "breeder_name": "BeetleBase Breeder",
+  "individual": {
+    "code": "DHO-2024-001",
+    "species_common": "国産オオクワガタ",
+    "species_scientific": "Dorcus hopei binodulosus",
+    "birth_date": "2023-07-15",
+    "length_mm": "85.2",
+    "jaw_width_mm": "6.8"
+  },
+  "parents": {
+    "male": {
+      "code": "YG-2022-A"
+    },
+    "female": {
+      "code": "YG-2022-B"
+    }
+  },
+  "grandparents": {
+    "male_male": {
+      "code": "YG-GP-M1"
+    },
+    "male_female": {
+      "code": "YG-GP-F1"
+    },
+    "female_male": {
+      "code": "YG-GP-M2"
+    },
+    "female_female": {
+      "code": "YG-GP-F2"
+    }
+  }
+}
