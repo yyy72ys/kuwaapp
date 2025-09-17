@@ -1,0 +1,117 @@
+## ✅ 事前準備（1回だけでOK）
+
+```bash
+bash
+コピーする編集する
+# Gitがインストールされているか確認
+git --version
+
+# グローバル設定（未設定の場合）
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+```
+
+---
+
+## 📦 ローカルのプロジェクトを新しくGitHubにアップロードする流れ
+
+### ① GitHubで新しいリポジトリを作成（空のリポジトリ）
+
+GitHub上で「New Repository」を作成し、リポジトリURLをコピー
+
+（例：`https://github.com/yourname/your-repo.git`）
+
+### ② ターミナルで以下を実行
+
+```bash
+bash
+コピーする編集する
+# プロジェクトのディレクトリに移動
+cd /path/to/your/project
+
+# Git初期化
+git init
+
+# ファイルをステージングに追加
+git add .
+
+# コミット（1回目）
+git commit -m "Initial commit"
+
+# リモートリポジトリを追加（URLは作成したGitHubリポジトリに置き換える）
+git remote add origin https://github.com/yourname/your-repo.git
+
+# プッシュ（初回のみ -u オプションでブランチ追跡）
+git push -u origin master   # または main（リポジトリ設定により異なる）
+
+```
+
+---
+
+## 📁 既にGit管理されているローカルプロジェクトを別のGitHubにアップロードする場合
+
+```bash
+bash
+コピーする編集する
+# すでにGit管理されている場合、リモートを変更
+git remote set-url origin https://github.com/yourname/your-repo.git
+
+# 変更を反映
+git push -u origin master   # または main
+
+```
+
+---
+
+## 🌐 以後の更新・プッシュ手順（毎回）
+
+```bash
+bash
+コピーする編集する
+git add .
+git commit -m "更新内容のメッセージ"
+git push
+
+```
+
+---
+
+## ⚠️ よくある注意点
+
+- `.gitignore` を設定して、アップロードしたくないファイルを除外しましょう
+- プッシュ先のブランチ名（`main` or `master`）は、GitHub側に合わせてください
+- 2段階認証を使っている場合、Personal Access Tokenが必要です（パスワードの代わり
+- 
+
+### 対処法①：現在のリモート設定を確認する
+
+まず、現在のリモート設定を確認しましょう：
+
+```bash
+bash
+コピーする編集する
+git remote -v
+
+```
+
+これにより、既存の `origin`（または他の名前のリモート）のURLが表示されます。
+
+---
+
+### 対処法②：既存の `origin` を上書き（URL変更）
+
+もし `origin` のURLを新しいものに変更したい場合は、以下のコマンドで変更できます：
+
+```bash
+bash
+コピーする編集する
+git remote set-url origin https://github.com/yyy72ys/wave0525
+
+```
+
+git add .
+git commit -m "add commit"
+git push -u origin main
+
+git push -u origin main --force

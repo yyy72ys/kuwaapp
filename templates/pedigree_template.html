@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-g">
+    <title>血統証明書</title>
+    <link rel="stylesheet" href="pedigree_style.css">
+</head>
+<body>
+    <div class="certificate-container">
+        <header>
+            <h1>血統証明書</h1>
+            <p class="serial">No. {{serial_number}}</p>
+        </header>
+        <main>
+            <section class="individual-info">
+                <h2>個体情報</h2>
+                <table>
+                    <tr>
+                        <th>個体管理コード</th>
+                        <td>{{individual.code}}</td>
+                    </tr>
+                    <tr>
+                        <th>種名</th>
+                        <td>{{individual.species_common}} ({{individual.species_scientific}})</td>
+                    </tr>
+                    <tr>
+                        <th>羽化日</th>
+                        <td>{{individual.birth_date}}</td>
+                    </tr>
+                    <tr>
+                        <th>サイズ</th>
+                        <td>体長: {{individual.length_mm}}mm / 大顎幅: {{individual.jaw_width_mm}}mm</td>
+                    </tr>
+                </table>
+            </section>
+            <section class="pedigree-chart">
+                <h2>血統図</h2>
+                <!-- A simplified pedigree chart -->
+                <div class="tree">
+                    <ul>
+                        <li>
+                            <div class="node self">{{individual.code}}</div>
+                            <ul>
+                                <li>
+                                    <div class="node parent">父: {{parents.male.code}}</div>
+                                    <ul>
+                                        <li><div class="node grandparent">祖父: {{grandparents.male_male.code}}</div></li>
+                                        <li><div class="node grandparent">祖母: {{grandparents.male_female.code}}</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="node parent">母: {{parents.female.code}}</div>
+                                    <ul>
+                                        <li><div class="node grandparent">祖父: {{grandparents.female_male.code}}</div></li>
+                                        <li><div class="node grandparent">祖母: {{grandparents.female_female.code}}</div></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>上記の内容を証明します。</p>
+            <p class="issuer">発行日: {{issue_date}}</p>
+            <p class="breeder">発行者: {{breeder_name}}</p>
+        </footer>
+    </div>
+</body>
+</html>

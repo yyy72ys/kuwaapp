@@ -1,0 +1,7 @@
+{
+  "name": "BeetleBase - Insect Management Hub",
+  "description": "A comprehensive application for insect breeders to manage individuals, track lineage, upload photos, and generate pedigree certificates. It features CSV import, QR code integration, and AI-powered reports.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
